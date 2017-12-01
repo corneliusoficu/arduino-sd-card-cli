@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceRoot}\\headers",
+                "${workspaceRoot}"  
+                
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "C:\\Program Files (x86)\\Arduino\\hardware",
+                    "C:\\Program Files (x86)\\Arduino\\libraries",
+                    "${workspaceRoot}\\headers",
+                    "${workspaceRoot}"
+                    
+                ]
+            },
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 3
+}
