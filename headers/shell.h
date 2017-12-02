@@ -1,4 +1,8 @@
+#ifndef SHELL_H
+#define SHELL_H
+
 #include "Arduino.h"
+#include "commands.h"
 
 #define MAXIMUM_INPUT_BUFFER   200
 #define MAXIMUM_ARGUMENT_LENGTH 50
@@ -12,5 +16,8 @@ enum state
 };
 
 void   handle_commands();
-String  read_line();
-char** get_command_arguments(String command_input); 
+char*  read_line();
+char** get_command_arguments(char*); 
+status execute_command(char**);
+
+#endif

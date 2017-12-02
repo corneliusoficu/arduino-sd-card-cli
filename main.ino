@@ -1,5 +1,3 @@
-#include <SPI.h>
-#include <SD.h>
 #include "headers/shell.h"
 
 void setup()
@@ -9,12 +7,21 @@ void setup()
 
     if(!SD.begin(4))
     {
-        Serial.println("Cannot access SD card!");
+        Serial.println(F("Cannot access SD card!"));
         return;
     }
 
-    Serial.println("Succesfully accessed the SD card!");
-    Serial.println("Welcome to Corneliu's SD card CLI!");
+    Serial.println(F("Welcome to Corneliu's SD card CLI!"));
+
+    if( !set_current_directory("/") )
+    {
+        Serial.print  (F("Failed to open the root directory of SD Card"));
+        Serial.flush();
+        exit( EXIT_FAILURE );
+    }
+
+    Serial.println(F("Succesfully accessed the SD card!"));
+    
     Serial.flush();
 }
 
