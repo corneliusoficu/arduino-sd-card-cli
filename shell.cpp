@@ -3,15 +3,27 @@
 char **arguments;
 char  *input_text;
 
+void free_arguments_memory(char **args)
+{
+    uint8_t index = 0;
+    while(args[index] != NULL)
+    {
+        free(args[index]);
+        index++;
+    }
+    free(args);
+}
+
 void handle_commands()
 {
+    Serial.print(F("Free Ram = "));Serial.println(freeRam());
     Serial.print( F(">") );
     input_text = read_line();
     arguments = get_command_arguments(input_text);
     execute_command( arguments );
-    free(arguments);
+    free_arguments_memory(arguments);
     free(input_text);
-    Serial.print(F("Free Ram = "));Serial.println(freeRam());
+    
     Serial.flush();
     
 }

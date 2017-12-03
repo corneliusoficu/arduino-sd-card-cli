@@ -23,6 +23,7 @@ void setup()
     Serial.println(F("Succesfully accessed the SD card!"));
     
     Serial.flush();
+
 }
 
 void loop()
